@@ -10,7 +10,7 @@ export default function Form() {
     const [address, setAddress] = useState('')
     const [birthdate, setBirthDate] = useState('')
     const [gender, setGender] = useState('')
-    const [skill, setSkill] = useState('Coding','Design','Gaming')
+    const [skill, setSkill] = useState('')
 
     function fullName(event) {
         setFullName(event.target.value)
@@ -80,9 +80,41 @@ export default function Form() {
 
                     <div className='text-input'>
                         <h3 className='subtitle'>Kemampuan</h3>
-                        <input onChange={(event) =>setSkill(event.target.value)} type="checkbox" name="skill" id="checkbox1" value='Coding'/>Coding
-                        <input onChange={(event) =>setSkill(event.target.value)} type="checkbox" name="skill2" id="checkbox2" value='Design'/>Design
-                        <input onChange={(event) =>setSkill(event.target.value)} type="checkbox" name="skill3" id="checkbox3" value='Gaming'/>Gaming
+                        <input onChange={(event) => {
+                                            if (event.target.checked) {
+                                                setSkill([...skill, event.target.value]);
+                                            } else {
+                                                setSkill(
+                                                    skill.filter(
+                                                        (skill) => skill !== event.target.value
+                                                    )
+                                                );
+                                            }
+                                        }} type="checkbox" name="skill" id="checkbox1" value='Coding'/>Coding
+
+                        <input onChange={(event) => {
+                                            if (event.target.checked) {
+                                                setSkill([...skill, event.target.value]);
+                                            } else {
+                                                setSkill(
+                                                    skill.filter(
+                                                        (skill) => skill !== event.target.value
+                                                    )
+                                                );
+                                            }
+                                        }} type="checkbox" name="skill2" id="checkbox2" value='Design'/>Design
+
+                        <input onChange={(event) => {
+                                            if (event.target.checked) {
+                                                setSkill([...skill, event.target.value]);
+                                            } else {
+                                                setSkill(
+                                                    skill.filter(
+                                                        (skill) => skill !== event.target.value
+                                                    )
+                                                );
+                                            }
+                                        }} type="checkbox" name="skill3" id="checkbox3" value='Gaming'/>Gaming
                     </div>
                 </div>
                 <input type='submit' />
