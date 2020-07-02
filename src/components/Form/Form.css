@@ -1,0 +1,14 @@
+* {
+    text-align: center;
+}
+
+.form-input {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.text-input {
+    padding: 10px;
+}
